@@ -41,10 +41,10 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.GET, "/auth").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/usuario").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/usuario/login").permitAll()
-                        .requestMatchers("/usuario/**").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/api/auth").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/usuario").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/usuario/login").permitAll()
+                        .requestMatchers("/api/usuario/**").authenticated()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
